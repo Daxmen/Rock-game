@@ -4,71 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ROCK PAPER SCISSOR</title>
+    <script src="./rps.js" defer></script>
 </head>
 <body>
-    <script>
-        function getComputerChoice() {
-            const valorComp = ["rock","paper","scissors"];
 
-            return valorComp[(Math.floor(Math.random() * valorComp.length))];
-                }
-    
-        function getHumanChoice() {
-            let valorHum = prompt('Ingrese que desea jugar: "rock", "paper" o "scissors" debe ingresar tal cual esta escrito');
-            return valorHum.toLowerCase();
-        }
-
-        let humanScore = 0;
-        let computerScore = 0;
-
-        function playRound(humanChoice, computerChoice) {
-            
-        
-            if (humanChoice == computerChoice) {
-                console.log("Empate");
-            } else if (humanChoice=="rock" & computerChoice=="paper"){
-                console.log("papel vence a piedra, Perdiste!!");
-                computerScore = computerScore + 1;
-            } else if (humanChoice=="rock" & computerChoice=="scissors"){
-                console.log("piedra vence a tijeras, Ganaste!!");
-                humanScore = humanScore + 1;
-            } else if (humanChoice=="paper" & computerChoice=="rock") {
-                console.log("Papel vence a piedra, Ganasta!!");
-                humanScore = humanScore + 1;
-            } else if (humanChoice=="paper" & computerChoice=="scissors"){
-                console.log("Tijeras vence a papel, Perdiste!!");
-                computerScore = computerScore+1;
-            } else if (humanChoice=="scissors" & computerChoice=="rock"){
-                console.log("Piedra vence a tijeras, Perdiste!!");
-                computerScore = computerScore+1;
-            } else if (humanChoice=="scissors" & computerChoice=="paper"){
-                console.log("Tijeras vence a papel, Ganaste!!");
-                humanScore = humanScore + 1;
-            }
-
-        }
-
-
-
-        function playGame() {
-            let i = 0;
-            while (i<5) {
-                let humanSelection = getHumanChoice();
-                let computerSelection = getComputerChoice();
-                rounds = playRound(humanSelection, computerSelection);
-                i++;
-            }
-        
-    
-            }
-
-
-console.log(playGame())
-console.log(computerScore)
-console.log(humanScore)
-
-console.log(`El marcador final es: Humano ${humanScore} - Computadora ${computerScore}.`)
-
-    </script>
+    <button id="rock">Rock</button>
+    <button id="papper">Papper</button>
+    <button id="scissors">Scissors</button>
+    <div id="tracker"></div>
 </body>
 </html>
